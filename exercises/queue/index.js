@@ -8,6 +8,19 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+//First In, First Out (Grocery store line)
+class Queue {
+    constructor(){
+        this.queue = [];
+    }
+
+    add(elem){
+        this.queue.unshift(elem);
+    }
+
+    remove(){
+        return this.queue.pop();
+    }
+}
 
 module.exports = Queue;
