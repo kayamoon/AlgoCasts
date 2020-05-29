@@ -15,7 +15,7 @@
 //so if that function gets called again with the same arguments, it will instead return the previous computed result
 
 
-function memoize(fn){ //returns a function, shortens runtime A LOT
+function memoize(fn){ //returns a function, shortens runtime A LOT, O(n) time complexity
     const cache = {};
     return function(...args){ ///...args assigns all args as an array and passes it in, ES6 syntax
         if(cache[args]){
