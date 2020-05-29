@@ -8,15 +8,30 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) { 
-    const chunked = []; //new array that holds chunks
-    let index = 0; //index of the array
-    while(index < array.length){  //iterates through array until array is empty
-        chunked.push(array.slice(index,index+size)); //slices everything from array's index to the index + size and pushes it to chunked array
-        index += size; //add size to the index variable
+
+
+
+function chunk(array, size) { //Solving without following along w the video
+    //create a results array
+    //iterate through array
+    //keep track of the last element in the array
+    //if there is no last element, create a subarray with the current elem and push it to the results array
+        //same if the size of the last element is equal to size
+    //else
+        //push elem to last
+    //return the results array
+    const results = [];
+    for (let elem of array){
+        let last = results[results.length-1];
+        if(!last || last.length === size){
+            results.push([elem]); //make sure to push as an ARRAY
+        } else {
+            last.push(elem);
+        }
     }
-    return chunked; //make sure you always return the array
+    return results;
 }
+
 
 module.exports = chunk;
 
